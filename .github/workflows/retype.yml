@@ -23,4 +23,4 @@ jobs:
       - run: cd .retype
       - uses: retypeapp/action-github-pages@v1
         with:
-          update-branch: false
+          update-branch: true
