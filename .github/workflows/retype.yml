@@ -1,14 +1,25 @@
-image: node:lts-alpine
+name: Publish Retype powered website to GitHub Pages
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
-before_script:
-  - npm install --global retypeapp # https://retype.com/guides/getting-started/
+jobs:
+  publish:
+    name: Publish to retype branch
 
-pages:
-  script:
-  - retype build
-  - mv site public
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - uses: retypeapp/action-build@v1
+      
+      - uses: retypeapp/action-github-pages@v1
+        with:
+          update-branch: true

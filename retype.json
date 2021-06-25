@@ -1,6 +1,7 @@
 {
   "input": ".",
   "output": ".retype",
+  "base": "retype",
   "branding": {
     "title": "DOCS TEST",
     "label": "V1"
