@@ -1,7 +1,7 @@
 {
   "input": ".",
   "output": ".retype",
-  "base": "retype",
+  "base": "re-te",
   "branding": {
     "title": "DOCS TEST",
     "label": "V1"
